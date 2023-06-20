@@ -244,23 +244,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 27711939}
   m_CullTransparentMesh: 1
---- !u!114 &106538718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 467126463133992024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a3c04b4a8b64806906db7079f20e4f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_GlobalChatCanvas: {fileID: 0}
-  m_ContentRT: {fileID: 0}
-  m_BubbleLeft: {fileID: 3364394929633695711, guid: f324550a32836b94693f21f7a416411a, type: 3}
-  m_BubbleRight: {fileID: 818457071051776631, guid: 5024602b533211241bb0ab4fd7e088e3, type: 3}
-  m_InputField: {fileID: 0}
 --- !u!1 &687484075
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,6 +391,7 @@ GameObject:
   - component: {fileID: 880703978}
   - component: {fileID: 880703977}
   - component: {fileID: 880703976}
+  - component: {fileID: 880703979}
   m_Layer: 5
   m_Name: eastbound trains button
   m_TagString: Untagged
@@ -479,7 +463,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 880703977}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 880703979}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: LoadPlatform
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &880703977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,6 +514,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 880703974}
   m_CullTransparentMesh: 1
+--- !u!114 &880703979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880703974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c146277c9d267544bafaafec90f6610, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1000440038
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,6 +659,7 @@ GameObject:
   - component: {fileID: 1027757210}
   - component: {fileID: 1027757209}
   - component: {fileID: 1027757208}
+  - component: {fileID: 1027757211}
   m_Layer: 5
   m_Name: back button
   m_TagString: Untagged
@@ -722,7 +731,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1027757209}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1027757211}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: LoadMain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1027757209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -761,6 +782,86 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1027757206}
   m_CullTransparentMesh: 1
+--- !u!114 &1027757211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027757206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c146277c9d267544bafaafec90f6610, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1090478013
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1090478016}
+  - component: {fileID: 1090478015}
+  - component: {fileID: 1090478014}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1090478014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090478013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1090478015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090478013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &1090478016
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090478013}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1275305466
 GameObject:
   m_ObjectHideFlags: 0
@@ -1326,6 +1427,7 @@ GameObject:
   - component: {fileID: 2056713453}
   - component: {fileID: 2056713452}
   - component: {fileID: 2056713451}
+  - component: {fileID: 2056713454}
   m_Layer: 5
   m_Name: westbound trains button
   m_TagString: Untagged
@@ -1397,7 +1499,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2056713452}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2056713454}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: LoadPlatform
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2056713452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1436,6 +1550,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2056713449}
   m_CullTransparentMesh: 1
+--- !u!114 &2056713454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056713449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c146277c9d267544bafaafec90f6610, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &467126463133992024
 GameObject:
   m_ObjectHideFlags: 0
@@ -1447,7 +1573,6 @@ GameObject:
   - component: {fileID: 467126463133992027}
   - component: {fileID: 467126463133992026}
   - component: {fileID: 467126463133992025}
-  - component: {fileID: 106538718}
   - component: {fileID: 467126463133992028}
   m_Layer: 0
   m_Name: PlayerController
