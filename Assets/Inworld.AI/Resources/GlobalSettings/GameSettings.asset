@@ -15,5 +15,5 @@ MonoBehaviour:
   currentServer: {fileID: 11400000, guid: 28b3b2b35eaee4a4abd0939f64328122, type: 2}
   currentWorkspace: {fileID: 11400000, guid: f5f0e00bf3c0dc042892e91757ba15df, type: 2}
   currentScene: {fileID: 11400000, guid: 5099ebc1079465b449e79125f2d290ae, type: 2}
-  currentCharacter: {fileID: 11400000, guid: 7969801d701dcd04eb35be7cff56efb3, type: 2}
+  currentCharacter: {fileID: 11400000, guid: 1618da73c5a9d9b4eb94353bb7b42b7e, type: 2}
   currentKey: {fileID: 11400000, guid: 71bedb88140d6314db07eb3af5caab5f, type: 2}

@@ -17,5 +17,7 @@ MonoBehaviour:
   description: This is an operator booth at a Line B station of the TCC
   characters:
   - workspaces/tcc_npcs/characters/marcus
-  triggers: []
+  - workspaces/tcc_npcs/characters/jaden
+  triggers:
+  - workspaces/tcc_npcs/triggers/jan-station
   index: 0
