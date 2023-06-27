@@ -6,14 +6,17 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
+
 public class LineBPlatform : MonoBehaviour
 {
 
     public TMP_Text direction_text;
+    public TMP_Text pathOfTravel_text;
 
-    public TMP_Text station;
+    public TMP_Text station_text;
 
-    public SceneChanger drawDirection;
+    public SceneChanger platformInfo;   //accessing functions from SceneChanger script
+    public StationManager trainStatus;   //accessing functions from StationManager script
 
     public string test;
 
@@ -21,7 +24,19 @@ public class LineBPlatform : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        direction_text.text = drawDirection.getDirection();
+        trainStatus.onboardTrain(false);
+
+        direction_text.text = platformInfo.getDirection();
+        
+        if(String.Equals(platformInfo.getDirection(), "Westbound")){
+            pathOfTravel_text.text = "To Mrs Kipling";
+        }
+        else if(String.Equals(platformInfo.getDirection(), "Eastbound")){
+            pathOfTravel_text.text = "To Obamna";
+        }
+        
+        station_text.text = platformInfo.getStation();
+
     }
 
     // Update is called once per frame

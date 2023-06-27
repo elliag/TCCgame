@@ -6,14 +6,18 @@ using UnityEngine.SceneManagement;
 public class SceneChanger : MonoBehaviour
 {
 
-    //other scripts
-    static public string direction;
+    static public string direction; //variable to hold the selected path of travel
+
+    //array of every station on Line B
+    static public string[] LineB_Stations = new string[] {"Mrs Kipling", "Rizzlington", "Young Bill", "John", "Runnymead", "Low Park", "Peele", "Donedat West", "Landsupe", "Bufferin", "Bossington", "Crispie", "Batthirst", "Spagina", "St Peppa", "Bae", "Floor-Olde", "Sherbert", "Fastle Crank", "Narrowview", "Bester", "Vape", "Donfalls", "Brownleaf", "Cookswell", "Loosepine", "Side Road", "Elizabeth Park", "Inmate", "Obamna"};
+ 
+    static public string currentStation;
+    static public int stationIndex;
 
     void Start(){
-
     }
 
-    public void LoadMain(){
+    public void LoadMain_LineB(){
         //Load the Main Floor scene
         SceneManager.LoadScene(sceneName: "LineB_Main");
     }
@@ -47,12 +51,56 @@ public class SceneChanger : MonoBehaviour
         SceneManager.LoadScene(sceneName: "LineB_Train");
     }
 
+    public void exitTrain(){
+        switch(direction)
+        {
+            case "Westbound":
+            LoadWestPlatform();
+            break;
+
+            case "Eastbound":
+            LoadEastPlatform();
+            break;
+
+            case "NorthBound":
+            LoadNorthPlatform();
+            break;
+
+            case "Southbound":
+            LoadSouthPlatform();
+            break;
+        }
+    }
+
     public string getDirection(){
         return direction;
     }
 
     public void setDirection(string x){
         direction = x;
+    }
+
+    public string getStation(){
+        return currentStation;
+    }
+
+    public void setStation(int x){
+        currentStation = LineB_Stations[x];
+    }
+
+    public int getStationIndex(){
+        stationIndex = System.Array.IndexOf (LineB_Stations, currentStation);
+        return stationIndex;
+    }
+
+    public string[] getLineB(){
+        string[] stationsCopy = new string[30];
+
+        for(int x = 0; x < LineB_Stations.Length; x++){
+            stationsCopy[x] = LineB_Stations[x];
+        }
+        
+        return stationsCopy;
     }
 
 }
