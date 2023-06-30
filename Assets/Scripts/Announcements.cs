@@ -35,7 +35,7 @@ public class Announcements : MonoBehaviour
         audioData.PlayOneShot(stations[33]);
     }
 
-    public void trainAnnouncments(){
+    public void stationAnnouncments(){
 
         switch(stationInfo.getStation()){
             case "Mrs Kipling":

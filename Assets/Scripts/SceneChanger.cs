@@ -9,13 +9,11 @@ public class SceneChanger : MonoBehaviour
     static public string direction; //variable to hold the selected path of travel
 
     //array of every station on Line B
-    static public string[] LineB_Stations = new string[] {"Mrs Kipling", "Rizzlington", "Young Bill", "John", "Runnymead", "Low Park", "Peele", "Donedat West", "Landsupe", "Bufferin", "Bossington", "Crispie", "Batthirst", "Spagina", "St Peppa", "Bae", "Floor-Olde", "Sherbert", "Fastle Crank", "Narrowview", "Bester", "Vape", "Donfalls", "Brownleaf", "Cookswell", "Loosepine", "Side Road", "Elizabeth Park", "Inmate", "Obamna"};
+    static public string[] LineB_Stations = new string[] {"Mrs Kipling", "Rizzlington", "Regal Fork", "Young Bill", "John", "Runnymead", "Low Park", "Peele", "Donedat West", "Landsupe", "Bufferin", "Bossington", "Crispie", "Batthirst", "Spagina", "St Peppa", "Bae", "Floor-Olde", "Sherbert", "Fastle Crank", "Narrowview", "Bester", "Vape", "Donfalls", "Brownleaf", "Cookswell", "Loosepine", "Side Road", "Elizabeth Park", "Inmate", "Obamna"};
  
     static public string currentStation;
     static public int stationIndex;
 
-    void Start(){
-    }
 
     public void LoadMain_LineB(){
         //Load the Main Floor scene
@@ -82,6 +80,10 @@ public class SceneChanger : MonoBehaviour
 
     public string getStation(){
         return currentStation;
+    }
+
+    public string getStation(int x){
+        return LineB_Stations[x];
     }
 
     public void setStation(int x){

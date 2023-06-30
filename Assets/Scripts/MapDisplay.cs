@@ -5,22 +5,20 @@ using UnityEngine;
 public class MapDisplay : MonoBehaviour
 {
     public GameObject map;
-    public GameObject back;
+    public GameObject buttons;
+
 
     void Start(){
-        map.SetActive(false);
-        back.SetActive(false);
-        
     }
 
     public void ShowMap()
     {
         map.SetActive(true);
-        back.SetActive(true);
+        buttons.SetActive(false);
     }
     public void HideMap()
     {
         map.SetActive(false);
-        back.SetActive(false);
+        buttons.SetActive(true);
     }
 }

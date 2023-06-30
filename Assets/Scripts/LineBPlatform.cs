@@ -9,6 +9,9 @@ using System;
 
 public class LineBPlatform : MonoBehaviour
 {
+    public Animator anim;
+
+    public GameObject train;
 
     public TMP_Text direction_text;
     public TMP_Text pathOfTravel_text;
@@ -24,6 +27,8 @@ public class LineBPlatform : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       // anim = train.GetComponent<Animation>();
+        
         trainStatus.onboardTrain(false);
 
         direction_text.text = platformInfo.getDirection();
@@ -39,9 +44,18 @@ public class LineBPlatform : MonoBehaviour
 
     }
 
+    public void trainEnter(){
+        anim.Play("Train_Enter");
+    }
+
+    public void trainExit(){
+        anim.Play("Train_Exit");
+    }
+
     // Update is called once per frame
     void Update()
     {
+
        
     }
 

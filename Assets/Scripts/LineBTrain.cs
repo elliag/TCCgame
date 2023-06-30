@@ -13,12 +13,18 @@ public class LineBTrain : MonoBehaviour
     public SceneChanger stationInfo;   //accessing functions from SceneChanger script
     public StationManager trainStatus;   //accessing functions from StationManager script
 
+    public GameObject map;    //map canvas
+
     // Start is called before the first frame update
     void Start()
     {
         trainStatus.setAccessible(false);
         trainStatus.onboardTrain(true);
-        trainStatus.nextStation();
+        //trainStatus.nextStation();
+
+        map.SetActive(false);
+
+        trainStatus.resetTimer2();
     }
 
     // Update is called once per frame
@@ -27,12 +33,12 @@ public class LineBTrain : MonoBehaviour
         switch(trainStatus.getAccessible()){
             //if train is at the station
             case true:
-            status.text = "Now arriving at " + stationInfo.getStation() + " station";
+            status.text = "Now arriving at " + stationInfo.getStation();
             break;
 
             //if train is moving
             case false:
-            status.text = "Next station is " + stationInfo.getStation() + " station";
+            status.text = "Next station is " + stationInfo.getStation();
             break;
         }
 
