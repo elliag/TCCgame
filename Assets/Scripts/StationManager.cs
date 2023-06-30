@@ -76,31 +76,35 @@ public class StationManager : MonoBehaviour
 
     public void waitingForTrain(){
 
-        if (timer >= 21){
-            //train leaves anim
-            platform.trainExit();
-            accessible = false;
-        }
-        else if (timer <= 18 && timer >= 15){
-            platform.trainEnter();
-        }
+        if(!(stationInfo.getStationIndex() == 0 && String.Equals(stationInfo.getDirection(), "Westbound")) && !(stationInfo.getStationIndex() == 30 && String.Equals(stationInfo.getDirection(), "Eastbound"))){
+            if (timer >= 21){
+                //train leaves anim
+                platform.trainExit();
+                accessible = false;
+            }
+            else if (timer <= 18 && timer >= 15){
+                platform.trainEnter();
+            }
 
-        //after 14 seconds, train arrives at the station and player can board
-        else if (timer <= 15 && timer >= 8){
-            allAboard.SetActive(true);  // button to board train appears
-            accessible = true;
-        }
+            //after 14 seconds, train arrives at the station and player can board
+            else if (timer <= 15 && timer >= 8){
+                platform.doorOpen();
+                allAboard.SetActive(true);  // button to board train appears
+                accessible = true;
+            }
 
-        else if(timer <= 7 && timer >= 6){
-            announcements.doorsClosing();
-        }
-        //after 24 seconds, train leaves the station and player cannot board
-        else if (accessible && timer <= 4){
-            allAboard.SetActive(false);  // button to board train disappears
-            accessible = false;
-        }
-        else if (!accessible && timer <= 0){
-            resetTimer1();
+            else if(timer <= 7 && timer >= 6){
+                announcements.doorsClosing();
+            }
+            //after 24 seconds, train leaves the station and player cannot board
+            else if (accessible && timer <= 4){
+                platform.doorClose();
+                allAboard.SetActive(false);  // button to board train disappears
+                accessible = false;
+            }
+            else if (!accessible && timer <= 0){
+                resetTimer1();
+            }
         }
 
     }

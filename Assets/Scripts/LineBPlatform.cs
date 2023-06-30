@@ -27,7 +27,6 @@ public class LineBPlatform : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       // anim = train.GetComponent<Animation>();
         
         trainStatus.onboardTrain(false);
 
@@ -50,6 +49,14 @@ public class LineBPlatform : MonoBehaviour
 
     public void trainExit(){
         anim.Play("Train_Exit");
+    }
+
+    public void doorOpen(){
+        anim.Play("DoorOpen");
+    }
+
+    public void doorClose(){
+        anim.Play("DoorClose");
     }
 
     // Update is called once per frame

@@ -1484,7 +1484,8 @@ PrefabInstance:
       propertyPath: m_InworldSceneData
       value: 
       objectReference: {fileID: 11400000, guid: 5099ebc1079465b449e79125f2d290ae, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6560745356186654253, guid: bef69608b56b9a24fa0a2c356fae0b74, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bef69608b56b9a24fa0a2c356fae0b74, type: 3}
 --- !u!4 &2113439310 stripped
 Transform:

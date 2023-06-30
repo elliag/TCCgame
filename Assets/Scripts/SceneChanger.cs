@@ -45,8 +45,10 @@ public class SceneChanger : MonoBehaviour
     }
     public void LoadTrain(){
         setDirection(direction);
-        //Load the Train scene
-        SceneManager.LoadScene(sceneName: "LineB_Train");
+        SceneManager.LoadScene(sceneName: "LineB_Train");           //Load Train scene
+    }
+    public void LoadTerminal(){             
+        SceneManager.LoadScene(sceneName: "LineB_BusTerminal");           //Load bus terminal scene
     }
 
     public void exitTrain(){

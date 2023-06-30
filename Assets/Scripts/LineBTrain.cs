@@ -8,6 +8,8 @@ using System;
 
 public class LineBTrain : MonoBehaviour
 {
+    public Animator anim;
+
     public TMP_Text status;    //current station
 
     public SceneChanger stationInfo;   //accessing functions from SceneChanger script
@@ -42,6 +44,22 @@ public class LineBTrain : MonoBehaviour
             break;
         }
 
+    }
+
+    public void trainEnter(){
+        //anim.Play("Train_Enter");
+    }
+
+    public void trainExit(){
+        //anim.Play("Train_Exit");
+    }
+
+    public void doorOpen(){
+        anim.Play("DoorOpenInside");
+    }
+
+    public void doorClose(){
+        anim.Play("DoorCloseInside");
     }
 
 
