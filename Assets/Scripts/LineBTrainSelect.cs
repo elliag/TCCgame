@@ -1,16 +1,19 @@
+//LineBTrainSelect Class controls which directions the player can choose to travel based on their current station
+//Players cannot go westbound on the westmost station or eastbound on the eastmost station
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class LineBTrainSelect : MonoBehaviour
 {
-    public SceneChanger stationInfo;   //accessing functions from SceneChanger script
+    public SceneChanger stationInfo;   //accessing functions from SceneChanger script to access the current station
 
     public GameObject eastbound;    //to eastbound button
     public GameObject westbound;    //to westbound button
 
-    public GameObject eastboundIcon;    //to eastbound button
-    public GameObject westboundIcon;    //to westbound button
+    public GameObject eastboundIcon;    //to eastbound icon
+    public GameObject westboundIcon;    //to westbound icon
 
     public GameObject map;    //map canvas
 
@@ -19,7 +22,7 @@ public class LineBTrainSelect : MonoBehaviour
     {
         map.SetActive(false);
 
-        switch(stationInfo.getStation()){
+        switch(stationInfo.getStation()){   // determines which directions player can access based on their current station
             case "Mrs Kipling":
             westbound.SetActive(false);
             westboundIcon.SetActive(false);
@@ -41,12 +44,6 @@ public class LineBTrainSelect : MonoBehaviour
                 eastboundIcon.SetActive(true);
             break;
         }
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         
     }
 }

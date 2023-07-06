@@ -1,3 +1,5 @@
+// handMove class attaches the hand sprite to the mouse coords while the player is interacting with the phone component
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

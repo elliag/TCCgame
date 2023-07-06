@@ -1,3 +1,5 @@
+//LineBPlatform script updates station info and path of travel info displayed on the platform and animations that occur on the platform
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,8 +20,8 @@ public class LineBPlatform : MonoBehaviour
 
     public TMP_Text station_text;
 
-    public SceneChanger platformInfo;   //accessing functions from SceneChanger script
-    public StationManager trainStatus;   //accessing functions from StationManager script
+    public SceneChanger platformInfo;   //accessing functions from SceneChanger script to access current station and path of travel
+    public StationManager trainStatus;   //accessing functions from StationManager script to update if the player is onboard/off train
 
     public string test;
 
@@ -27,8 +29,7 @@ public class LineBPlatform : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        trainStatus.onboardTrain(false);
+        trainStatus.onboardTrain(false);    // player is no longer on board the train
 
         direction_text.text = platformInfo.getDirection();
         
@@ -57,13 +58,6 @@ public class LineBPlatform : MonoBehaviour
 
     public void doorClose(){
         anim.Play("DoorClose");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-       
     }
 
 }

@@ -1,3 +1,5 @@
+//Notes class controls the notes app on the Phone, displays keyboard input on the screen
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,7 +18,7 @@ public class Notes : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        which = true; // true for title
+        which = true; // bool to identify if the player is typing in the Title or Body of the note (true for Title)
     }
 
     // Update is called once per frame
@@ -25,15 +27,14 @@ public class Notes : MonoBehaviour
         if (which){
             foreach (char c in Input.inputString)
             {
-                if (c == '\b') // has backspace/delete been pressed?
+                if (c == '\b') // backspace
                 {
                     if (titleText.text.Length != 0)
                     {
                         titleText.text = titleText.text.Substring(0, titleText.text.Length - 1);
-                    
                     }
                 }
-                else if ((c == '\n') || (c == '\r')) // enter/return
+                else if ((c == '\n') || (c == '\r')) // enter button switches from title to body
                 {
                     which = false;
                 }
@@ -46,17 +47,16 @@ public class Notes : MonoBehaviour
         else{
             foreach (char c in Input.inputString)
             {
-                if (c == '\b') // has backspace/delete been pressed?
+                if (c == '\b') // backspace
                 {
                     if (noteText.text.Length != 0)
                     {
                         noteText.text = noteText.text.Substring(0, noteText.text.Length - 1);
-                    
                     }
                 }
-                else if ((c == '\n') || (c == '\r')) // enter/return
+                else if ((c == '\n') || (c == '\r')) // enter
                 {
-                    noteText.text = Environment.NewLine;
+                    noteText.text = noteText.text + Environment.NewLine;
                 }
                 else
                 {
@@ -66,11 +66,11 @@ public class Notes : MonoBehaviour
         }
     }
 
-    public void title(){
+    public void title(){    // switches typing to the title
         which = true;
     }
 
-    public void note(){
+    public void note(){     // switches typing to the body
         which = false;
     }
 }

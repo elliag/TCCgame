@@ -1,3 +1,5 @@
+// LineBTrain Class 'resets' the train scene to its natural state and controls text display and animations that occur on the train
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,8 +14,8 @@ public class LineBTrain : MonoBehaviour
 
     public TMP_Text status;    //current station
 
-    public SceneChanger stationInfo;   //accessing functions from SceneChanger script
-    public StationManager trainStatus;   //accessing functions from StationManager script
+    public SceneChanger stationInfo;   //accessing functions from SceneChanger script to check current station
+    public StationManager trainStatus;   //accessing functions from StationManager script to update current station text
 
     public GameObject map;    //map canvas
 
@@ -44,14 +46,6 @@ public class LineBTrain : MonoBehaviour
             break;
         }
 
-    }
-
-    public void trainEnter(){
-        //anim.Play("Train_Enter");
-    }
-
-    public void trainExit(){
-        //anim.Play("Train_Exit");
     }
 
     public void doorOpen(){

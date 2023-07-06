@@ -1,3 +1,5 @@
+//PhoneMusic class controls the audio played from the music app on the phone, and the display of the current song
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,9 +8,9 @@ using UnityEngine;
 public class PhoneMusic : MonoBehaviour{
 
     static AudioSource phoneMusic;
-    public AudioClip[] songs = new AudioClip[3];
+    public AudioClip[] songs = new AudioClip[3];    // holds songs to play
 
-    public Phone music;
+    public Phone music; //accessing functions from Phone script to control the display
 
     // Start is called before the first frame update
     void Start()
@@ -17,24 +19,22 @@ public class PhoneMusic : MonoBehaviour{
         music.closePhone();
     }
 
-    public void psychedelicacy(){
+    public void psychedelicacy(){   //play psychedelicacy
         music.setSong(0);
-        //phoneMusic.Stop();
         phoneMusic.PlayOneShot(songs[0]);
     }
 
-    public void sayHello(){
+    public void sayHello(){ //play say hello
         music.setSong(1);
-        //phoneMusic.Stop();
         phoneMusic.PlayOneShot(songs[1]);
     }
 
-    public void funkSoWhat(){
+    public void funkSoWhat(){   //play funk so what
         music.setSong(2);
-        phoneMusic.Stop();
         phoneMusic.PlayOneShot(songs[2]);
     }
 
+    //when the next icon is clicked the next song will play
     public void next(){
         if (music.getSong() == 2){
             phoneMusic.Stop();
@@ -49,6 +49,7 @@ public class PhoneMusic : MonoBehaviour{
         }
     } 
 
+    //when the back icon is clicked the previous song will play
     public void back(){
         if (music.getSong() == 0){
             phoneMusic.Stop();

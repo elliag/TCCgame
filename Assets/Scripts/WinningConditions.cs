@@ -1,3 +1,5 @@
+//Winning Condiitons checks if the player is at the correct destination when they exit to the street
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

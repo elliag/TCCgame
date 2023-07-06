@@ -1,3 +1,5 @@
+// The announcments class stores the audioClip array and methods that handle the announcement audios on the train and platform
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +7,7 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class Announcements : MonoBehaviour
 {
-    public SceneChanger stationInfo;   //accessing functions from SceneChanger script
+    public SceneChanger stationInfo;   //accessing functions from SceneChanger script to check the current station
 
     static AudioSource audioData;
     public AudioClip[] stations = new AudioClip[34];
@@ -15,12 +17,6 @@ public class Announcements : MonoBehaviour
     void Start()
     {
         audioData = GetComponent<AudioSource>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void LastStopAnnouncement(){

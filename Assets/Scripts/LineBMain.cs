@@ -1,3 +1,5 @@
+//LineBMain script resets the Main scene to its natural state
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

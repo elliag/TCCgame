@@ -1,3 +1,5 @@
+//Phone class controls the diplay of phone screens 
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,30 +11,34 @@ using System;
 
 public class Phone : MonoBehaviour{
 
-    public SceneChanger stationInfo;
-    public MainMenu destination;
-    
-    public GameObject buttons;    
-    public GameObject phoneDisplay;    
+    public SceneChanger stationInfo;    //accessing functions from SceneChanger script to convert destination to text format
+    public MainMenu destination;    //accessing functions from MainMenu to check the destination
 
+    public GameObject buttons;  //UI buttons in the background
+    public GameObject phoneDisplay; //phone canvas   
+
+    //time display on home screen
     public TMP_Text timeDisplay;
     DateTime time;
 
-    public TMP_Text song;
-    public TMP_Text station;
+    public TMP_Text song;   //text to display the current song on music app
+    public TMP_Text station;    //text to display the destination on messaging app
 
-     public int currentSong;
+    public int currentSong;
     static public string currentScreen;
 
+    //canvases for the different app screens
     public GameObject home;
     public GameObject music;
     public GameObject notes;
     public GameObject message;
 
+    //album cover icons for songs on music app
     public GameObject psych;
     public GameObject hello;
     public GameObject funk;
 
+    //UI icons for music app
     public GameObject pauseButton;
     public GameObject pauseIcon;
     public GameObject playButton;
@@ -51,6 +57,7 @@ public class Phone : MonoBehaviour{
     void Update()
     {
 
+    //displays the current time
         time = DateTime.Now;
         if (time.Hour < 12){ 
             timeDisplay.text = padding(time.Hour) + ":" + padding(time.Minute) + " AM";
@@ -59,6 +66,7 @@ public class Phone : MonoBehaviour{
             timeDisplay.text = padding(time.Hour) + ":" + padding(time.Minute) + " PM";
         }
         
+    //controls which app screen is displayed on the phone
         switch(currentScreen){
             case "homeScreen":
             home.SetActive(true);
@@ -80,7 +88,6 @@ public class Phone : MonoBehaviour{
             music.SetActive(false);
             notes.SetActive(true);
             message.SetActive(false);
-            notesScreen();
             break;
 
             case "messageScreen":
@@ -100,11 +107,13 @@ public class Phone : MonoBehaviour{
         }
     }
 
+//adds a 0 when necessary to the time 
     public string padding (int n){
         return n.ToString().PadLeft(2, '0');
     }
 
 
+    //displays the current song on the music app
     public void musicScreen(){
         switch(currentSong){
             case 0:
@@ -130,22 +139,18 @@ public class Phone : MonoBehaviour{
         }
     }
 
+    //displays correct UI icons when music is paused
     public void pause(){
         pauseButton.SetActive(false);
         pauseIcon.SetActive(false);
         playButton.SetActive(true);
     }
 
+    //displays correct UI icons when music is played
     public void play(){
         pauseButton.SetActive(true);
         pauseIcon.SetActive(true);
         playButton.SetActive(false);
-    }
-
-
-
-    public void notesScreen(){
-
     }
 
 
