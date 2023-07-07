@@ -68,6 +68,16 @@ public class SceneChanger : MonoBehaviour
         SceneManager.LoadScene(sceneName: "LineB_BusTerminal");
     }
 
+    //Loads the bus stop scene
+    public void LoadBusStop(){             
+        SceneManager.LoadScene(sceneName: "BusStop");
+    }
+
+    //Loads the bus scene
+    public void LoadBus(){             
+        SceneManager.LoadScene(sceneName: "Bus");
+    }
+
     //Loads the correct train platform when exiting the train
     public void exitTrain(){
         switch(direction)

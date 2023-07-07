@@ -21,8 +21,6 @@ public class LineBBusTerminal : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        whichBus = 0;   //1 = bus 1, 2 = bus 2
-
         bus1_text.text = busLine.getStation_BusLine1(stationInfo.getStationIndex());
         bus2_text.text = busLine.getStation_BusLine2(stationInfo.getStationIndex());
     }
@@ -31,13 +29,6 @@ public class LineBBusTerminal : MonoBehaviour
     void Update()
     {
         
-    }
-
-
-    //can delete this
-    public void busDisplay(int x){
-        bus1_text.text = busLine.getStation_BusLine1(x);
-        bus2_text.text = busLine.getStation_BusLine2(x);
     }
 
 
